@@ -1,0 +1,64 @@
+# Node modules and dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+
+# Expo
+.expo/
+web-build/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+.vercel-token
+
+# Vercel
+.vercel
+
+# macOS
+.DS_Store
+
+# Editor specific
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+temp_*
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.new
+
+# Logging
+logs/
+*.log
+
+# Cursor-specific
+.cursor/
+.roo/
+.roomodes
+.windsurfrules
+
+# TaskMaster
+.taskmasterconfig
+claude-task-master/
+tasks/
+
+# Other project-specific files to ignore
+scripts/
+mcp.json
+vocabulary.txt
+new_keywords.txt
