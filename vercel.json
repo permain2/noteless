@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "rewrites": [
+    { "source": "^/_expo/static/(.*)", "destination": "/_expo/static/$1" },
+    { "source": "^/favicon.ico", "destination": "/favicon.ico" },
+    { "source": "^/metadata.json", "destination": "/metadata.json" },
+    { "source": "^/public/(.*)", "destination": "/public/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "installCommand": "npm install",
+  "buildCommand": "npx expo export -p web",
+  "outputDirectory": "dist",
+  "env": {
+    "EXPO_PUBLIC_SUPABASE_URL": "https://yvbfwlschpufqihnaldt.supabase.co",
+    "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmZ3bHNjaHB1ZnFpaG5hbGR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY0MDI4MzIsImV4cCI6MjAzMTk3ODgzMn0.9hIPtA0ILVBHaGq84I9U3igxQ-1uWECm1mJICd_sBW8"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "s-maxage=0" }
+      ]
+    },
+    {
+      "source": "/_expo/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+} 
