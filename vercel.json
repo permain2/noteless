@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "framework": "react",
+  "framework": "create-react-app",
   "buildCommand": "npm install && npx expo export -p web",
   "outputDirectory": "dist",
   "rewrites": [
