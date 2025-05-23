@@ -1,0 +1,25 @@
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# misc
+.DS_Store
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# editor
+.vscode
+.idea
+
+# other
+README.md
+*.md
+.git
+.gitignore
+LICENSE
+deploy-to-vercel.sh 

@@ -1,13 +1,25 @@
 {
   "version": 2,
-  "framework": "create-react-app",
-  "buildCommand": "npm install && npx expo export -p web",
-  "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "framework": null,
+  "buildCommand": "./build.sh",
+  "outputDirectory": "build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "routes": [
+    { "src": "^/static/(.*)", "dest": "/static/$1" },
+    { "src": "^/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "^/manifest.json", "dest": "/manifest.json" },
+    { "src": "^/logo192.png", "dest": "/logo192.png" },
+    { "src": "^/logo512.png", "dest": "/logo512.png" },
+    { "src": "^/(.*)", "dest": "/index.html" }
   ],
   "env": {
-    "EXPO_PUBLIC_SUPABASE_URL": "https://yvbfwlschpufqihnaldt.supabase.co",
-    "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmZ3bHNjaHB1ZnFpaG5hbGR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY0MDI4MzIsImV4cCI6MjAzMTk3ODgzMn0.9hIPtA0ILVBHaGq84I9U3igxQ-1uWECm1mJICd_sBW8"
+    "REACT_APP_SUPABASE_URL": "@supabase_url",
+    "REACT_APP_SUPABASE_ANON_KEY": "@supabase_anon_key"
+  },
+  "build": {
+    "env": {
+      "REACT_APP_SUPABASE_URL": "@supabase_url",
+      "REACT_APP_SUPABASE_ANON_KEY": "@supabase_anon_key"
+    }
   }
 } 
